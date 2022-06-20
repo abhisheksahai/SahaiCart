@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace SahaiCart.API.Migrations
 {
     [DbContext(typeof(ModelContext))]
-    [Migration("20220620050329_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20220620053630_InitialDatabase")]
+    partial class InitialDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
