@@ -15,6 +15,10 @@ namespace SahaiCart.API.Extensions
             builder.Services.AddSwaggerGen();
             builder.Services.AddDbContext<ModelContext>(options => options.UseSqlite(ApiHelper.GetDefaultConnection(), b => b.MigrationsAssembly("SahaiCart.API")));
 
+            ServiceProvider serviceProvider = builder.Services.BuildServiceProvider();
+            ModelContext modelContext = serviceProvider.GetService<ModelContext>();
+            modelContext.Database.Migrate();
+            DbInitializer.Initialize(modelContext);
         }
 
         public static void AddMiddleWare(this WebApplication app)
