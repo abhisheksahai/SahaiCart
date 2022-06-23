@@ -8,11 +8,14 @@ namespace SahaiCart.API.Extensions
     {
         public static void AddServices(this WebApplicationBuilder builder)
         {
-            ApiHelper.ApiConfiguration = builder.Configuration.GetSection(ApiConfiguration.Key).Get<ApiConfiguration>();
 
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Logging.ClearProviders();
+
+            ApiHelper.ApiConfiguration = builder.Configuration.GetSection(ApiConfiguration.Key).Get<ApiConfiguration>();
             builder.Services.AddDbContext<ModelContext>(options => options.UseSqlite(ApiHelper.GetDefaultConnection(), b => b.MigrationsAssembly("SahaiCart.API")));
 
             ServiceProvider serviceProvider = builder.Services.BuildServiceProvider();
