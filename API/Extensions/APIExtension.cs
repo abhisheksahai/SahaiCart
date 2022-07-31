@@ -16,7 +16,7 @@ namespace SahaiCart.API.Extensions
             builder.Logging.ClearProviders();
 
             ApiHelper.ApiConfiguration = builder.Configuration.GetSection(ApiConfiguration.Key).Get<ApiConfiguration>();
-            builder.Services.AddDbContext<ModelContext>(options => options.UseSqlite(ApiHelper.GetDefaultConnection(), b => b.MigrationsAssembly("SahaiCart.API")));
+            builder.Services.AddDbContext<ModelContext>(options => options.UseNpgsql(ApiHelper.GetDefaultConnection(), b => b.MigrationsAssembly("SahaiCart.API")));
 
             ServiceProvider serviceProvider = builder.Services.BuildServiceProvider();
             ModelContext modelContext = serviceProvider.GetService<ModelContext>();
