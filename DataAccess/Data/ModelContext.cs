@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SahaiCart.Models.Entities;
 
-namespace DataAccess.Data
+namespace SahaiCart.DataAccess.Data
 {
     public class ModelContext : DbContext
     {

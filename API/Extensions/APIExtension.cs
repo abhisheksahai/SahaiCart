@@ -1,4 +1,4 @@
-﻿using DataAccess.Data;
+﻿using SahaiCart.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 using SahaiCart.API.Settings;
 

@@ -1,6 +1,6 @@
 ﻿using SahaiCart.Models.Entities;
 
-namespace DataAccess.Data
+namespace SahaiCart.DataAccess.Data
 {
     public static class DbInitializer
     {
