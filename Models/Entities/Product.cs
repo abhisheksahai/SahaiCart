@@ -1,5 +1,8 @@
-﻿namespace SahaiCart.Models.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace SahaiCart.Models.Entities
 {
+    [Table(name: "products")]
     public class Product
     {
         public int Id { get; set; }

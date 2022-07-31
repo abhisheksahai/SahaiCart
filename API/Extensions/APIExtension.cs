@@ -1,6 +1,6 @@
-﻿using SahaiCart.DataAccess.Data;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using SahaiCart.API.Settings;
+using SahaiCart.DataAccess.Data;
 
 namespace SahaiCart.API.Extensions
 {

@@ -1,6 +1,6 @@
-﻿using SahaiCart.DataAccess.Data;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using SahaiCart.DataAccess.Data;
 using SahaiCart.Models.Entities;
 
 namespace SahaiCart.API.Controllers
