@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
+import { iproduct } from "../models/iproduct";
 
 function App() {
-  const [products, setProducts] = useState([
-    { name: "Hardware", price: 1000 },
-    { name: "Software", price: 2000 },
-  ]);
+  const [products, setProducts] = useState<iproduct[]>([]);
 
   useEffect(() => {
     fetch("http://localhost:5000/api/Products/GetProducts")
@@ -16,8 +14,14 @@ function App() {
     setProducts((previousState) => [
       ...previousState,
       {
+        id: previousState.length + 1,
         name: "Product" + (previousState.length + 1),
+        description: "",
         price: (previousState.length + 1) * 1000,
+        pictureUrl: "",
+        type: "",
+        brand: "",
+        quantityInStock: 0,
       },
     ]);
   }
