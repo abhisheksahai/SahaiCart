@@ -1,10 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [products, setProducts] = useState([
     { name: "Hardware", price: 1000 },
     { name: "Software", price: 2000 },
   ]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/api/Products/GetProducts")
+      .then((respose) => respose.json())
+      .then((data) => setProducts(data));
+  }, []);
 
   function AddProduct() {
     setProducts((previousState) => [

@@ -13,6 +13,8 @@ namespace SahaiCart.API.Extensions
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            builder.Services.AddCors();
+
             builder.Logging.ClearProviders();
 
             ApiHelper.ApiConfiguration = builder.Configuration.GetSection(ApiConfiguration.Key).Get<ApiConfiguration>();
@@ -31,6 +33,9 @@ namespace SahaiCart.API.Extensions
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.UseCors(opt => opt.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
+
             app.UseHttpsRedirection();
             app.UseAuthorization();
             app.MapControllers();
