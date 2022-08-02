@@ -10,6 +10,9 @@ function App() {
   const theme = createTheme({
     palette: {
       mode: palletType,
+      background: {
+        default: palletType === "light" ? "#eaeaea" : "#121212",
+      },
     },
   });
 
@@ -20,7 +23,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Header onThemeChange={onThemeChange} />
+      <Header darkMode={darkMode} onThemeChange={onThemeChange} />
       <Container>
         <Catalog />
       </Container>
