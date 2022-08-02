@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Catalog } from "../../features/Catalog";
 import { iproduct } from "../models/iproduct";
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
       .then((data) => setProducts(data));
   }, []);
 
-  function AddProduct() {
+  function addProduct() {
     setProducts((previousState) => [
       ...previousState,
       {
@@ -29,14 +30,7 @@ function App() {
   return (
     <div>
       <h1>SahaiCart</h1>
-      <button onClick={AddProduct}>Add product</button>
-      <ul>
-        {products.map((product) => (
-          <li key={product.name}>
-            {product.name} {product.price}
-          </li>
-        ))}
-      </ul>
+      <Catalog products={products} addProduct={addProduct} />
     </div>
   );
 }
