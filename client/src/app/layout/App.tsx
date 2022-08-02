@@ -1,7 +1,9 @@
-import { Typography } from "@mui/material";
+import { CssBaseline } from "@mui/material";
+import { Container } from "@mui/system";
 import { useEffect, useState } from "react";
 import { Catalog } from "../../features/Catalog";
 import { iproduct } from "../models/iproduct";
+import { Header } from "./Header";
 
 function App() {
   const [products, setProducts] = useState<iproduct[]>([]);
@@ -30,8 +32,11 @@ function App() {
 
   return (
     <div>
-      <Typography variant="h2">SahaiCart</Typography>
-      <Catalog products={products} addProduct={addProduct} />
+      <CssBaseline />
+      <Header />
+      <Container>
+        <Catalog products={products} addProduct={addProduct} />
+      </Container>
     </div>
   );
 }
